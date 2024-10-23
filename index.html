@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  <!-- Load Chart.js -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Interactive Data Dashboard</h1>
+        </header>
+        <div class="filter-section">
+            <label for="metric">Select Metric:</label>
+            <select id="metric" onchange="updateChart()">
+                <option value="sales">Sales</option>
+                <option value="revenue">Revenue</option>
+                <option value="customers">Customers</option>
+            </select>
+
+            <label for="timeRange">Select Time Range:</label>
+            <select id="timeRange" onchange="updateChart()">
+                <option value="7days">Last 7 Days</option>
+                <option value="30days">Last 30 Days</option>
+            </select>
+        </div>
+
+        <canvas id="myChart"></canvas>
+
+        <footer>
+            <button onclick="exportData()">Export Data</button>
+        </footer>
+    </div>
+
+    <script src="app.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
